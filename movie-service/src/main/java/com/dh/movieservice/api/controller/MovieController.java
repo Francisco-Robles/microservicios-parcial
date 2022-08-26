@@ -22,7 +22,7 @@ public class MovieController {
         this.service = service;
     }
 
-    @GetMapping("/{genre}")
+    @GetMapping("/byGenre/{genre}")
     ResponseEntity<List<Movie>> getMovieByGenre(@PathVariable String genre) {
         return ResponseEntity.ok().body(service.findByGenre(genre));
     }
