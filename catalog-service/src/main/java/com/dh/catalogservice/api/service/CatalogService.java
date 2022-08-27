@@ -26,7 +26,7 @@ public class CatalogService implements ICatalogService {
     @Override
     public Map<String, Object> getMovieByGenre(String genre) {
 
-        var url = String.format("http://localhost:8001/movies/byGenre/%s", genre);
+        var url = String.format("http://movie-service/movies/byGenre/%s", genre);
 
         /*var response = clienteRest.exchange(url, HttpMethod.GET,
                 null,

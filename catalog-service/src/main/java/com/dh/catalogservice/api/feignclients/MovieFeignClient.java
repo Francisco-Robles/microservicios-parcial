@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
-@FeignClient(name = "movie-service", url = "http://localhost:8001/movies")
+@FeignClient(name = "movie-service", path = "/movies")
 public interface MovieFeignClient {
 
     @GetMapping("/byGenre/{genre}")
