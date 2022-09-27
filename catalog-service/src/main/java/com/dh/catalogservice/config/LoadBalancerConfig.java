@@ -1,4 +1,4 @@
-package com.dh.catalogservice.api.config;
+package com.dh.catalogservice.config;
 
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.cloud.loadbalancer.annotation.LoadBalancerClients;

@@ -24,3 +24,37 @@ spring:
           uri: lb://movie-service
           predicates:
             - Path=/movies/**
+        - id: serie-service
+          uri: lb://serie-service
+          predicates:
+            - Path=/series/**
+
+resilience4j.circuitbreaker:
+  instances:
+    movieCB:
+      registerHealthIndicator: true
+      slidingWindowSize: 10
+      permittedNumerOfCallsInHalfOpenState: 3
+      slidingWindowsType: TIME_BASED
+      minimunNumberOfCalls: 4
+      waitDurationInOpenState: 5s
+      failureRateThreshold: 50
+      eventConsumerBufferSize: 10
+    serieCB:
+      registerHealthIndicator: true
+      slidingWindowSize: 10
+      permittedNumerOfCallsInHalfOpenState: 3
+      slidingWindowsType: TIME_BASED
+      minimunNumberOfCalls: 4
+      waitDurationInOpenState: 5s
+      failureRateThreshold: 50
+      eventConsumerBufferSize: 10
+    catalogCB:
+      registerHealthIndicator: true
+      slidingWindowSize: 10
+      permittedNumerOfCallsInHalfOpenState: 3
+      slidingWindowsType: TIME_BASED
+      minimunNumberOfCalls: 4
+      waitDurationInOpenState: 5s
+      failureRateThreshold: 50
+      eventConsumerBufferSize: 10
